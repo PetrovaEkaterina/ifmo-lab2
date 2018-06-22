@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Пользовательские компоненты">
+        
+        <title>Пользовательские компоненты</title>
+        
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+              rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+              rel="stylesheet">
+        <link rel="stylesheet" href="../../index.css">
+        <style>
+            .fa-arrow-up:before {
+                left: 6px;
+                pointer-events: none;
+                position: absolute;
+                top: 6px;
+            }
+        </style>
+    </head>
+    <body class="page page_end-point">
+        <nav>
+            <ol class="breadcrumb bg-gray">
+                <li class="breadcrumb-item">
+                    <a href="../../#13_04_2018">Лабораторные работы. Семестр 2</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="../#custom-components">Результаты лабораторной работы от 13.04.2018</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Пользовательские компоненты
+                </li>
+            </ol>
+        </nav>
+        
+        <h4 id="author" title="GossJS">Василий Ковалев</h4>
+        
+        <article>
+            <h1>Пользовательские компоненты</h1>
+            <div class="btn-group">
+                <x-cntr val="1"></x-cntr>
+                <x-cntr val="16"></x-cntr>
+            </div>
+        </article>
+        
+        <script>
+            // Board расположен по адресу: https://kodaktor.ru/g/compo2_e222b
+            
+            class Counter extends HTMLElement {
+                constructor() {
+                    super();
+
+                    const shadow = this.attachShadow({ mode: 'open' });
+                    this.val = this.getAttribute('val');
+                    this.div = document.createElement('div');
+                    // Just for beauty (start).
+                    this.className += 'fa fa-arrow-up btn btn-success button';
+                    this.div.style.width = '100%';
+                    this.div.style.padding = '.5rem';
+                    this.div.style.paddingLeft = '1.5rem';
+                    this.style.padding = '0';
+                    // Just for beauty (finish).
+
+                    this.div.addEventListener('click', () => {
+                        this.setAttribute('val', +this.getAttribute('val') + 1);
+                    });
+
+                    shadow.appendChild(this.div);
+                }
+
+                static get observedAttributes() {
+                    return ['val'];
+                }
+
+                attributeChangedCallback(attrName, oldValue, newValue) {
+                    this.div.textContent = newValue;
+                }
+            }
+
+            customElements.define('x-cntr', Counter);
+        </script>
+    </body>
+</html>

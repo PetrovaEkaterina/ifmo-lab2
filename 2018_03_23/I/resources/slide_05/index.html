@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Слайд №5. Модели развёртывания | Тестовый урок от Ковалева Василия">
+        
+        <title>Слайд №5. Модели развёртывания</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../global_styles.css">
+    </head>
+    <body class="page">
+        <h1 class="page__title">Слайд №5. Модели развёртывания</h1>
+        
+        <p class="page__paragraph page__paragraph_main-info">
+            <span class="fa fa-book text-primary page__paragraph-icon"></span>
+            Модели развёртывания ("<b>Deployment models</b>") облачных решений различаются по количеству потребителей на одном физическом сервере и методу предоставления пространства на нём.
+            <br>
+            Национальный институт стандартов и технологий ("<b>National Institute of Standards and Technology</b>", NIST) определяет четыре основных модели развёртывания:
+        </p>
+        
+        <ul class="list page__list">
+            <li class="list__item">
+                Частное облако ("<b>Private cloud</b>")
+            </li>
+            <li class="list__item">
+                Общественное облако ("<b>Community cloud</b>")
+            </li>
+            <li class="list__item">
+                Публичное облако ("<b>Public cloud</b>")
+            </li>
+            <li class="list__item">
+                Гибридное облако ("<b>Hybrid cloud</b>")
+            </li>
+        </ul>
+        
+        <details class="spoiler page__spoiler">
+            <summary class="spoiler__title">
+                <span class="fa fa-info-circle text-primary spoiler__title_icon"></span>
+                Дополнительная информация
+            </summary>
+            <details class="spoiler page__spoiler">
+                <summary class="spoiler__title">
+                    Частное облако ("<b>Private cloud</b>")
+                </summary>
+                <p class="spoiler__content_text">
+                    <b>Частное облако</b> представляет собой такую модель развёртывания, при которой инфраструктура облака предоставляется исключительно для использования одной организацией, включающей нескольких потребителей (например, бизнес-единиц). Оно может принадлежать и управляться как самой организацией, так и третьей стороной (или их комбинацией). Облако может физически существовать как в помещениях компании, так и за их пределами.
+                </p>
+            </details>
+            <details class="spoiler page__spoiler">
+                <summary class="spoiler__title">
+                    Общественное облако ("<b>Community cloud</b>")
+                </summary>
+                <p class="spoiler__content_text">
+                    <b>Общественное облако</b> является моделью, при которой инфраструктура облака предоставляется в пользование конкретному сообществу, имеющему общие цели и проблемы (например, миссия, требования к безопасности, политика и соответствие различным другим требованиям). Оно может находиться в совместной собственности и управляться одной или более организацией сообщества, третьей стороной или их комбинацией. Так же, как и в частном облаке, может физически существовать как в помещениях владельца, так и за их пределами.
+                </p>
+            </details>
+            <details class="spoiler page__spoiler">
+                <summary class="spoiler__title">
+                    Публичное облако ("<b>Public cloud</b>")
+                </summary>
+                <p class="spoiler__content_text">
+                    <b>Публичное облако</b> ― это модель развёртывания, при которой инфраструктура облака предоставляется в свободное пользование широкому кругу лиц. Оно может находить в собственности коммерческих, научных, правительственных организаций или их комбинации. Облако существует исключительно в помещениях владельца (поставщика услуг).
+                </p>
+            </details>
+            <details class="spoiler page__spoiler">
+                <summary class="spoiler__title">
+                    Гибридное облако ("<b>Hybrid cloud</b>")
+                </summary>
+                <p class="spoiler__content_text">
+                    <b>Гибридное облако</b> представляет собой комбинацию двух и более вышеперечисленных моделей, которые, однако, остаются самостоятельными сущностями и связаны между собой стандартизованной или запатентованной технологией, обеспечивающей переносимость данных и приложений (например, использование ресурсов публичных облаков ("<b>cloud bursting</b>") для балансировки нагрузки между облаками).
+                </p>
+            </details>
+            <details class="spoiler page__spoiler">
+                <summary class="spoiler__title">
+                    Другие модели развёртывания
+                </summary>
+                <ul class="list spoiler__list">
+                    <li class="list__item">
+                        Распределённые облака ("<b>Distributed cloud</b>"), куда входят:
+                    </li>
+                    <ul class="list spoiler__list">
+                        <li class="list__item">
+                            Вычисления с использованием общих ресурсов ("<b>Public-resource computing</b>").
+                            <br>
+                            Примером является проект BOINC.
+                        </li>
+                        <li class="list__item">
+                            Добровольные вычисления ("<b>Volunteer cloud</b>").
+                            <br>
+                            Примером является проект Cloud@Home.
+                        </li>
+                    </ul>
+                    <li class="list__item">
+                        Мульти-облака ("<b>Multi-cloud</b>")
+                    </li>
+                </ul>
+            </details>
+        </details>
+        
+        <button type="button" class="btn btn-primary page__submit" 
+                onclick="window.parent.postMessage({ 'message': 'next' }, '*')">Дальше</button>
+    </body>
+</html>

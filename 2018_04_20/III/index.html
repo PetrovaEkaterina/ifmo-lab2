@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Задание по RxJs">
+        
+        <title>Задание по RxJs</title>
+        
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+              rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+              rel="stylesheet">
+        <link rel="stylesheet" href="../../index.css">
+    </head>
+    <body class="page page_end-point">
+        <nav>
+            <ol class="breadcrumb bg-gray">
+                <li class="breadcrumb-item">
+                    <a href="../../#20_04_2018">Лабораторные работы. Семестр 2</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="../#rx">Результаты лабораторной работы от 20.04.2018</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Задание по RxJs
+                </li>
+            </ol>
+        </nav>
+        
+        <h4 id="author" title="GossJS">Василий Ковалев</h4>
+        
+        <button class="btn btn-success button">Нажми меня и загляни в консоль</button>
+        
+        <script src="https://unpkg.com/rxjs@5.5.8/bundles/Rx.min.js"></script>
+        <script type="module">
+            'use strict';
+            
+            const $click = Rx.Observable.fromEvent(document, 'click')
+                                        .filter(ev => ev.target.tagName === 'BUTTON')
+                                        .map(ev => ({ x: ev.clientX, y: ev.clientY }));
+            
+            $click.subscribe(x => console.log(x));
+        </script>
+    </body>
+</html>
