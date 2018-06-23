@@ -1,0 +1,17 @@
+{
+    "scripts": {
+        "start": "webpack && node ./dist/main.js"
+    },
+    "name": "2018_03_02-3",
+    "version": "1.0.0",
+    "license": "MIT",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
+        "babel-plugin-transform-pipeline-operator": "^7.0.0-beta.3",
+        "babel-preset-env": "^1.6.1",
+        "babylon": "^7.0.0-beta.40",
+        "webpack": "^4.1.1",
+        "webpack-cli": "^2.0.10"
+    }
+}
