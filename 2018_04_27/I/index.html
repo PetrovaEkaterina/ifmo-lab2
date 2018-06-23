@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Вывод звёздочек с помощью React">
+        
+        <title>Вывод звёздочек с помощью React</title>
+        
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+              rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+              rel="stylesheet">
+        <link rel="stylesheet" href="../../index.css">
+        <style>
+            .stars {
+                text-align: center;
+            }
+        </style>
+        
+        <!-- подключить транспайлер -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/umd/react.production.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
+    </header>
+    <body class="page page_end-point">
+        <nav>
+            <ol class="breadcrumb bg-gray">
+                <li class="breadcrumb-item">
+                    <a href="../../#27_04_2018">Лабораторные работы. Семестр 2</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="../#react-stars">Результаты лабораторной работы от 27.04.2018</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Вывод звёздочек с помощью React
+                </li>
+            </ol>
+        </nav>
+        
+        <h4 id="author" title="GossJS">Петрова Екатерина</h4>
+        
+        <div class="cont"></div>
+        
+        <script type="text/babel">
+            const StarString = x => 
+                <div className="stars">
+                    {Array
+                        .from({ length: x.length })
+                        .map(() => <span className="fa fa-star text-warning"></span>)
+                    }
+                </div>;
+            
+            ReactDOM.render(
+                <div>
+                    <StarString length={location.search.replace('?', '')} />
+                </div>,
+                document.querySelector('.cont')
+            );
+        </script>
+    </body>
+</html>
