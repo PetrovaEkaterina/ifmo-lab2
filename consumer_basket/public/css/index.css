@@ -11,8 +11,10 @@
 }
 
 .good {
-    padding: .5rem;
     text-align: center;
+	 border: 4px double black; /* Параметры границы */
+	     width: 100px;
+    height: 50px;
 }
 
 .good:not(:last-of-type) {
@@ -31,22 +33,26 @@
 
 .basket__info {
     left: calc((100% - 264px) / 2);
-    position: absolute;
     text-align: center;
     top: calc((100% - 24px) / 2);
 }
 
 .basket__goods-container .good {
     margin: 0;
-    min-height: calc((453px - 1px *2) / 5);
     position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	}
+.basket__goods-container{
+	padding-left: 10px;
 }
+    
 
 .basket {
-    height: 453px;
-    margin-left: 5rem;
+	width: 140px;
+    height: 280px;
     position: relative;
-    width: 453px;
+	background-color:#e5eefc
 }
 
 .basket__progress {
