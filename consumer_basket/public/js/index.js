@@ -1,6 +1,6 @@
 'use strict';
 
-const budget = 450,
+const budget = 600,
       goods = {},
       budgetValueElement = document.getElementsByClassName('budget__budget-value')[0],
       goodElements = document.getElementsByClassName('good'),
@@ -10,21 +10,7 @@ const budget = 450,
 
 let purchaseAmount = 0;
 
-function colorProgressBar(fullness) {
-    if (fullness <= 50) {
-        progressBar.classList.add('bg-success');
-        progressBar.classList.remove('bg-warning');
-        progressBar.classList.remove('bg-danger');
-    } else if (fullness > 50 && fullness <= 85) {
-        progressBar.classList.add('bg-warning');
-        progressBar.classList.remove('bg-danger');
-        progressBar.classList.remove('bg-success');
-    } else {
-        progressBar.classList.add('bg-danger');
-        progressBar.classList.remove('bg-warning');
-        progressBar.classList.remove('bg-success');
-    }
-}
+
 
 budgetValueElement.textContent = budget;
 
@@ -51,7 +37,6 @@ basketElement.addEventListener('dragover', event => event.preventDefault());
 
 basketElement.addEventListener('order', ({ detail: { price: stringPrice, goodId } }) => {
     const price = +stringPrice;
-
     if (purchaseAmount + price > budget) {
         alert('Вы исчерпали свой бюджет!');
     } else {
@@ -74,11 +59,10 @@ basketElement.addEventListener('order', ({ detail: { price: stringPrice, goodId 
             counterElement.textContent = count;
             basketContainerElement.appendChild(orderedGoodElement);
         }
-
         purchaseAmount += price;
         const fullness = (purchaseAmount / budget) * 100;
-        progressBar.style.height = `${fullness}%`;
-        progressBar.innerHTML = `&euro;${purchaseAmount}`;
-        colorProgressBar(fullness);
+       // progressBar.style.height = `${fullness}%`;
+        //progressBar.innerHTML = `&euro;${purchaseAmount}`;
+        //colorProgressBar(fullness);
     }
 });
